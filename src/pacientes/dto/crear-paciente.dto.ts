@@ -25,4 +25,9 @@ export class CrearPacienteDto {
   @IsNotEmpty()
   @MaxLength(100)
   obraSocial: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(20)
+  celular: string;
 }

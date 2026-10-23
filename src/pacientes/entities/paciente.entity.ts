@@ -23,4 +23,6 @@ export class Paciente {
   @Column({ type: 'varchar', length: 100 })
   obraSocial: string;
 
+  @Column({ type: 'varchar', length: 20 })
+  celular: string;
 }

@@ -1,5 +1,5 @@
 
-//@baseUrl = https://api-pacientes-z3kx.onrender.com
+//@baseUrl = https://api-pruebas-render.onrender.com
 @baseUrl = http://localhost:3000
 @id = 1
 
@@ -13,10 +13,11 @@ POST {{baseUrl}}/pacientes
 Content-Type: application/json
 
 {
-  "nombre": "Juan Perez",
-  "dni": "30123456",
+  "nombre": "Romina Diaz",
+  "dni": "10123456",
   "fechaNacimiento": "1985-06-15",
-  "obraSocial": "OSDE"
+  "obraSocial": "OSDE",
+  "celular": "3564123456"
 }
 
 
