@@ -1,0 +1,89 @@
+
+@baseUrl = http://localhost:3000
+@id = 1
+
+### 1. Listar todos los pacientes
+GET {{baseUrl}}/pacientes
+
+
+### 2. Crear un paciente
+# @name crearPaciente
+POST {{baseUrl}}/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "Juan Perez",
+  "dni": "30123456",
+  "fechaNacimiento": "1985-06-15",
+  "obraSocial": "OSDE"
+}
+
+
+### 3. Consultar un paciente por ID
+GET {{baseUrl}}/pacientes/{{id}}
+
+
+### 4. Modificar todos los datos de un paciente (PUT)
+PUT {{baseUrl}}/pacientes/{{id}}
+Content-Type: application/json
+
+{
+  "nombre": "Juan Perez Actualizado",
+  "dni": "30123456",
+  "fechaNacimiento": "1985-06-15",
+  "obraSocial": "Swiss Medical"
+}
+
+
+### 5. Modificar solamente la obra social (PATCH)
+PATCH {{baseUrl}}/pacientes/{{id}}
+Content-Type: application/json
+
+{
+  "obraSocial": "OSDE"
+}
+
+
+### 6. Modificar el nombre
+PATCH {{baseUrl}}/pacientes/{{id}}
+Content-Type: application/json
+
+{
+  "nombre": "Juan Carlos Perez"
+}
+
+
+### 7. Eliminar un paciente
+DELETE {{baseUrl}}/pacientes/{{id}}
+
+
+### 8. Verificar que ya no existe
+GET {{baseUrl}}/pacientes/{{id}}
+
+
+### 9. Probar validación: DNI duplicado
+POST {{baseUrl}}/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "Otro Paciente",
+  "dni": "30123456",
+  "fechaNacimiento": "1990-01-20",
+  "obraSocial": "PAMI"
+}
+
+
+### 10. Probar validación: datos incorrectos
+POST {{baseUrl}}/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "",
+  "dni": "ABC123",
+  "fechaNacimiento": "fecha incorrecta",
+  "obraSocial": ""
+}
+
+
+### 11. Consultar un ID inexistente
+GET {{baseUrl}}/pacientes/999999
